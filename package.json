@@ -14,6 +14,6 @@
     "mocha": "latest"
   },
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha -R spec src/tests.js"
+    "test": "node_modules/mocha/bin/mocha -R spec build/tests.js"
   }
 }

@@ -1,1 +1,1 @@
-module.exports = require('./src/assert-type');
+module.exports = require('./build/assert-type');
