@@ -1,15 +1,15 @@
 {
   "name": "assert-type",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {"node": ">=0.6.0"},
   "main": "./index",
   "author": "Mike Lin <mlin@mlin.net> (https://github.com/mlin)",
   "description": "Runtime type assertions",
   "dependencies": {
-    "coffee-script": "latest",
     "underscore": "latest"
   },
   "devDependencies": {
+    "coffee-script": "latest",
     "expect.js": "latest",
     "mocha": "latest"
   },
