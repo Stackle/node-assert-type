@@ -159,7 +159,7 @@ arrOfMulti = (tys) ->
 # object matching prototype (keys to types)
 # only: if true, do not permit the object to have any other keys
 objOf = (only, proto) ->
-  T(s.bool, s.obj)(only, proto)
+  T(s.bool, s.obj.not.null)(only, proto)
   protoKeys = _.keys(proto)
   nameItems = []
   descItems = []
@@ -201,7 +201,7 @@ compositeTypes =
 
   # instance of given constructor (ditto)
   'inst.of': (Cons) ->
-                T(ty.fun)(Cons)
+                T(s.fun)(Cons)
                 # TODO: improve name & description
                 makeType "inst.of(...)", "instance of a specific constructor", (x) ->
                   s.obj(x) and (x instanceof Cons)

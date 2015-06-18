@@ -241,6 +241,21 @@ describe 'WrapFun', () ->
       expect(() -> F([ty.defined], ty.int, x)()).to.throwError()
     expect(() -> F(ty.int, ((x) -> 0))).to.throwError()
 
+describe 'inst.of', () ->
+  class Test
+  it 'positive', () ->
+    expect(ty.inst.of(Test)(new Test)).to.be(true)
+  it 'negative', () ->
+    expect(ty.inst.of(Test)(0)).to.be(false)
+    expect(ty.inst.of(Test)(null)).to.be(false)
+    expect(ty.inst.of(Test)([])).to.be(false)
+    expect(ty.inst.of(Test)({})).to.be(false)
+    expect(ty.inst.of(Test)(0.12)).to.be(false)
+    expect(ty.inst.of(Test)('')).to.be(false)
+    expect(ty.inst.of(Test)('Foo')).to.be(false)
+    expect(ty.inst.of(Test)(true)).to.be(false)
+    expect(ty.inst.of(Test)(false)).to.be(false)
+
 describe 'fun.of', () ->
   F = ty.WrapFun
   it 'positive', () ->
